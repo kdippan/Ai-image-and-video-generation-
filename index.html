@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffd8e7",
+                        "on-secondary": "#003640",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary": "#d0bcff",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#d0bcff",
+                        "on-surface-variant": "#cbc3d7",
+                        "tertiary-fixed-dim": "#ffafd3",
+                        "on-primary-container": "#340080",
+                        "on-primary-fixed-variant": "#5516be",
+                        "on-tertiary-fixed": "#3d0026",
+                        "surface-tint": "#d0bcff",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-secondary-fixed": "#001f26",
+                        "on-background": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#3c0091",
+                        "inverse-primary": "#6d3bd7",
+                        "outline": "#958ea0",
+                        "outline-variant": "#494454",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#560038",
+                        "secondary-container": "#03b5d3",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-container": "#e364a7",
+                        "on-primary-fixed": "#23005c",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e9ddff",
+                        "secondary": "#4cd7f6",
+                        "secondary-fixed": "#acedff",
+                        "tertiary": "#ffafd3",
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#00424e",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-tertiary-fixed-variant": "#85145a",
+                        "background": "#131313",
+                        "primary-container": "#a078ff",
+                        "on-tertiary": "#620040",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-panel {
+            background: rgba(23, 23, 23, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .masonry-grid {
+            columns: 1;
+        }
+        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (min-width: 1280px) { .masonry-grid { columns: 4; } }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/30 min-h-screen overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/40 backdrop-blur-xl dark:bg-surface/40 border-b border-outline-variant/10 shadow-sm flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-headline-lg font-headline-lg font-bold tracking-tight text-on-surface dark:text-on-surface">LUMINA AI</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Gallery</a>
+<a class="text-primary dark:text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200" href="#">Models</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Assets</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Studio</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-variant/20 rounded-full transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<button class="p-2 hover:bg-surface-variant/20 rounded-full transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Hidden on small screens) -->
+<aside class="fixed left-0 top-0 h-full hidden md:flex flex-col p-4 gap-4 z-40 bg-surface-dim/30 backdrop-blur-lg dark:bg-surface-dim/30 border-r border-outline-variant/5 w-64 pt-24">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">auto_awesome</span>
+</div>
+<div>
+<p class="text-label-md font-label-md font-bold text-on-surface">Creator Pro</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Standard Plan</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container rounded-xl font-bold transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/20 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">folder_special</span>
+<span class="text-label-md font-label-md">Collections</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/20 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-label-md font-label-md">History</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/20 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="text-label-md font-label-md">API</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/20 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-label-md font-label-md">Billing</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-primary py-3 rounded-xl text-on-primary font-bold shadow-lg shadow-primary/20 hover:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">add</span>
+<span class="text-label-md font-label-md">Generate New</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 md:pl-64 pb-32 min-h-screen">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Creative Explorer</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Review your latest generations and trending AI inspirations.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/10">All Models</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/10">Images</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/10">Videos</span>
+</div>
+</div>
+<!-- Masonry Gallery -->
+<div class="masonry-grid gap-gutter">
+<!-- Large Item -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all duration-300 shadow-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic, ultra-high-definition digital art piece of a futuristic obsidian city during a purple-hued twilight. The architecture is sharp and geometric, reflecting ambient neon glows from hidden light sources. The scene is rendered with deep blacks, electric violets, and subtle grey gradients, maintaining a high-end minimalist obsidian aesthetic with professional lighting and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJShcFWv9g7zdL5UUERlxq0wa858mf1GjOFxu9TTZzBf5oaTlh9xXhTCUh0r4aHGVXhIyCVtvZRFozekePOgcM5c5xQ9SZJBKqWZpxCnxTuR5M2OKZ6dMdLggjIAJfwMD2LLAwt6pbIXcoRctBZ-4OERlMooZp4SyhMKnhpVtMrmhR_Or8DKbP1yVBkvssAoHnlNIkKePx7yYR695vSGguR4o3mdHOS-B4dw0lZ7i3NGqFh3nnfKgiENjREM0yvphiWE1t-PRcHiU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<span class="text-label-sm font-label-sm text-primary mb-1">STABLE DIFFUSION XL</span>
+<p class="text-body-md font-body-md text-on-surface truncate">Cyberpunk cityscape at sunset</p>
+</div>
+</div>
+<!-- Video Preview -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all shadow-xl aspect-[9/16]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A smooth, slow-motion video loop of iridescent liquid metal flowing through a dark, zero-gravity environment. The lighting is dramatic and localized, casting deep shadows and bright specular highlights in a spectrum of soft purples and cool blues. The aesthetic is clean, sophisticated, and technologically advanced, echoing the premium obsidian and glassmorphic UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb_9SOmA_DzNbaN7zi1xGaS8eubFZ5mij2KhsXCrg7tzwGtNYjdL9lOML1wGl9ghPWSt1f6iEfP5GvBCw0sldI-duH4-GDPx-QldSjwdUU2lrs6rpinw4WbhKpJDOgZTlvhbe5glI1KuyPy3idVpuVu8TBS66HVlgXjVn7KhuZuDq_7xNRQnVv0na3edurnI6aKjzcCIYsm5chiiF7LzxZsrlFdJnn-XMT3M9VFwAUe4vXJJzt0cmgxTuANlYhHgh8XnX6jDcWAJ8"/>
+<div class="absolute top-3 right-3 bg-surface-dim/60 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-label-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="text-label-sm font-label-sm">0:12</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<span class="text-label-sm font-label-sm text-secondary mb-1">GEN-2 VIDEO</span>
+<p class="text-body-md font-body-md text-on-surface truncate">Liquid Metal Fluid Dynamics</p>
+</div>
+</div>
+<!-- Medium Item -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all shadow-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist architectural photograph of a spiral staircase made of dark, polished concrete and translucent glass. Sunlight filters through a high skylight, creating sharp geometric shadows on the monochromatic grey surfaces. The mood is serene and architectural, using a palette of deep charcoal, bright white highlights, and a touch of soft lavender light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChPTTZHFZ72YF4SbfupUnhlfrUwODHtvTOEJyu9adKSR6IFjdJQ4luTvy3PIR3E0X8SydCa84wHBXJ-OfIEGj1hIqgk7BiLzdmNGmZazkJGflQ0ypUGhRpz4rQS35b9WhhKcPqBr8VYmnf92wxqFEdg8PGaQegouwLmSK0d2FEDf7Q_5yn6xKDZIFU8v3Hz7NL4gHnvfUrD6pG2uv-Po1st_-VVnV8mBN8u44LphgkTcz1UVksgsNEqFOi_j9nakFobPKlTVroXEk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<span class="text-label-sm font-label-sm text-primary mb-1">MIDJOURNEY V6</span>
+<p class="text-body-md font-body-md text-on-surface truncate">Architectural Minimalist Spiral</p>
+</div>
+</div>
+<!-- Grid continues... -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all shadow-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A surreal landscape featuring a giant glowing crystalline flower blooming in the middle of a dark, obsidian-like desert under a massive moon. The crystals of the flower emit a soft, pulsing electric violet light that illuminates the surrounding black sand. The style is dreamlike and high-fidelity, with atmospheric fog and deep tonal layering consistent with a luxury dark interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc6FdUSvDpi096hgj-CFPxk2qPMCKW5zXPa-FdFHketJgEQQwZQFvLZzNQUZcYXW-kZOWwraNoJThiXVXqyWp3TOkdWN0M4dNrpqjs6RrQwgw798oXExUaMUAeEYuJbjY899NWWrp-BD8ovGx5l4FqIFh6mCuAM34wWsCt3cLiAZ9JEFWx9jMvDFuNHN0qOdN4mX_aqSyJXDTPWNil3l3OcEZ1eELcyGj6VA4POlLSnrXTwN5QU58euip9C6vf1M-b1MDioqifuXU"/>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all shadow-xl aspect-square">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract macro photography of soap bubbles with iridescent surfaces reflecting a futuristic, dark room with violet and blue light strips. The bubbles create complex, swirling geometric patterns and spheres. The contrast is high, focusing on the vibrant colors against a pure black background, matching a premium obsidian and glassmorphic UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUAVLtz9iIU90Dvht1-RxkUQAIfddT-Ru4ecn19UjspJ4Zsa8mcw-0wKVPEynimltqEeRIEPpYzCafTXJP4sGqkQQtjAjPEDG55T0Eh77VlDzr3j4QONxZEj_220lFeOVKc-HBBnNazBZUZYRelbZS3RlFHn_GeCPVJgYiBqClzJps5WpmTNe5a3NEQaxCjvkyGJKEV0p2zo3MyQa9-RYr-Bl0kdDdYoEi2jHPLh_E8bSTXVqZW6VhVXOzkprMDK6X__5cCsY6dZA"/>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all shadow-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A smooth, high-resolution gradient mesh featuring shades of electric violet, deep navy, and subtle charcoal black. The colors flow into one another with a smoky, ethereal quality. The composition is clean and modern, designed to serve as a high-fidelity background for an AI generation platform with a dark, sophisticated visual language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZlG0TndxBuZEgbGsMVKPsh0P-TuGuqqL03W-4zJLkYqZTDopl8NxJpF1T8eGUgaJnM-18q_IEydYAtNATS3IfiTsnsVUMUCrgIlxz7TicCjc-zgZjRQKOF39unsniGpJdn5JMcm3t0HmQ7glMD8E9-vfMMAR5yi4mwMuZFjOY0QkaXn82z_BAlpTWOAxaznJnc88ehwz9qseOpYOlSXUEq1yWNjWJpDzKprXmEMLWSnCvgRc1miW3I_Y6HE9Q7VgUZnN-26Ztdg8"/>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/5 hover:border-primary/30 transition-all shadow-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-tech digital representation of a planetary data network, with glowing connections and nodes wrapping around a dark, shadowed sphere. The network lines are a crisp electric violet, while the background is a deep obsidian void. The image has a professional, futuristic feel, emphasizing data and generative power within a minimalist dark-themed ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq4l1kuCMI6qpGnqF8AK4M2xkeuBlKaUwVU4ZIMIJdWFJFTtihezZPFrmClSNCU0ogpcT8an-2tHrmWUwTJkb2GobuVHkwVAppnEttWKlNgTxu87B1EXIJkLdWGYM0Ld2GThTPs7Es8aXR4mbpQ2YWaX2PrW0_-YQdJqA6XuEXAlVvPSa-ZgI45vhWhrG5JcVtD10avNSA7Yb3B_3CGPzt7CdH7Uhr7UTCcxU5QHBlRGLTlfkaUsfmKEEbH4Q6tWdrc5VN-CQ7naQ"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Prompt Input Bar -->
+<div class="fixed bottom-8 left-0 right-0 z-50 px-margin-mobile flex justify-center pointer-events-none">
+<div class="w-full max-w-3xl glass-panel rounded-full p-2 flex items-center gap-2 pointer-events-auto shadow-2xl shadow-black/50 border border-outline-variant/20">
+<div class="flex items-center gap-3 pl-4 flex-1">
+<span class="material-symbols-outlined text-on-surface-variant">auto_fix_high</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 py-2" placeholder="Imagine something spectacular..." type="text"/>
+</div>
+<div class="flex items-center gap-2 pr-1">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">image</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg shadow-primary/30 transition-all active:scale-95 group">
+<span class="text-label-md font-label-md">Generate</span>
+<span class="material-symbols-outlined text-[20px] group-hover:rotate-12 transition-transform">bolt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Bottom Navigation (Visible on mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl flex justify-around items-center py-3 border-t border-outline-variant/10">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">folder_special</span>
+<span class="text-label-sm font-label-sm">Saved</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">history</span>
+<span class="text-label-sm font-label-sm">History</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>
