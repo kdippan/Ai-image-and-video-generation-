@@ -1,1 +1,1 @@
-# Ai-image-and-video-generation-
+# Ai-image-generation-
