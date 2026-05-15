@@ -34,7 +34,6 @@
             .content-area { padding-bottom: 140px !important; }
         }
 
-        /* Custom Toggle Switch */
         .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #27272a; transition: .4s; border-radius: 34px; }
@@ -62,31 +61,31 @@
             <div id="userAvatar" class="w-10 h-10 rounded-xl bg-[#d0bcff] text-black flex items-center justify-center font-bold">U</div>
             <div class="flex flex-col">
                 <span id="userName" class="text-xs font-bold truncate">Creator</span>
-                <span class="text-[9px] text-[#d0bcff] font-bold uppercase">Settings & Account</span>
+                <span class="text-[9px] text-[#d0bcff] font-bold uppercase tracking-widest">Profile & Stats</span>
             </div>
         </div>
 
         <nav class="flex-grow flex flex-col gap-3">
             <button onclick="setView('home')" class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl font-bold text-sm">Studio</button>
-            <button onclick="setView('history')" class="flex items-center gap-4 p-4 hover:bg-white/5 rounded-2xl text-sm text-zinc-400">Library</button>
+            <button onclick="setView('history')" class="flex items-center gap-4 p-4 hover:bg-white/5 rounded-2xl text-sm text-zinc-400 transition-all">Library</button>
             <button onclick="openCoffeeModal()" class="mt-8 p-5 border border-orange-500/20 bg-orange-500/5 rounded-3xl text-orange-400 text-xs font-bold hover:bg-orange-500/10 transition-all">Support Studio</button>
         </nav>
 
-        <button onclick="logout()" class="mt-auto text-[10px] font-bold text-zinc-600 hover:text-red-400 uppercase tracking-widest">Sign Out</button>
+        <button onclick="logout()" class="mt-auto text-[10px] font-bold text-zinc-600 hover:text-red-400 uppercase tracking-widest transition-colors">Sign Out</button>
     </aside>
 
     <nav class="mobile-nav hidden fixed bottom-0 left-0 right-0 h-16 glass border-t border-white/10 z-[1000] flex items-center justify-around">
         <button onclick="setView('home')" class="flex flex-col items-center text-[#d0bcff] transition-colors" id="navHome">
             <span class="material-symbols-outlined">home</span>
-            <span class="text-[9px] font-bold uppercase">Home</span>
+            <span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
         </button>
         <button onclick="setView('history')" class="flex flex-col items-center text-zinc-500 transition-colors" id="navLib">
             <span class="material-symbols-outlined">history</span>
-            <span class="text-[9px] font-bold uppercase">History</span>
+            <span class="text-[9px] font-bold uppercase tracking-widest">History</span>
         </button>
         <button onclick="openProfile()" class="flex flex-col items-center text-zinc-500 transition-colors">
             <span class="material-symbols-outlined">manage_accounts</span>
-            <span class="text-[9px] font-bold uppercase">Profile</span>
+            <span class="text-[9px] font-bold uppercase tracking-widest">Profile</span>
         </button>
     </nav>
 
@@ -114,13 +113,13 @@
     <div id="profileModal" class="hidden fixed inset-0 z-[5000] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4">
         <div class="glass max-w-2xl w-full h-[85vh] rounded-[3rem] overflow-hidden flex flex-col border-white/10 shadow-2xl">
             <div class="p-8 border-b border-white/5 flex justify-between items-center bg-white/5">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500">Account Control</h2>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500">Account Dashboard</h2>
                 <button onclick="closeProfile()" class="w-10 h-10 flex items-center justify-center glass rounded-full">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
             
-            <div class="overflow-y-auto p-8 space-y-12">
+            <div class="overflow-y-auto p-8 space-y-10">
                 <section class="flex flex-col md:flex-row items-center gap-6 p-6 glass rounded-[2.5rem]">
                     <div id="modalAvatar" class="w-20 h-20 rounded-2xl bg-[#d0bcff] text-black flex items-center justify-center text-3xl font-bold">U</div>
                     <div class="flex-grow text-center md:text-left">
@@ -128,7 +127,7 @@
                             <h3 id="modalUserName" class="text-xl font-bold">User</h3>
                             <button onclick="editName()" class="material-symbols-outlined text-sm text-[#d0bcff]">edit</button>
                         </div>
-                        <p class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest">Lumina Certified Artist</p>
+                        <p class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest">Premium Creator</p>
                     </div>
                 </section>
 
@@ -148,48 +147,35 @@
                 </div>
 
                 <div class="space-y-4">
-                    <h4 class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest px-2">Preferences</h4>
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between p-5 glass rounded-2xl">
-                            <div>
-                                <p class="text-sm font-bold">Ultra-HD Rendering</p>
-                                <p class="text-[10px] text-zinc-500">Enhances resolution and neural noise reduction</p>
-                            </div>
-                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
-                        </div>
-                        <div class="flex items-center justify-between p-5 glass rounded-2xl">
-                            <div>
-                                <p class="text-sm font-bold">Private Library</p>
-                                <p class="text-[10px] text-zinc-500">Images stay in local history only</p>
-                            </div>
-                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
-                        </div>
+                    <h4 class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest px-2">About Image Generation</h4>
+                    <div class="p-8 bg-white/5 rounded-[3rem] border border-white/5 leading-relaxed">
+                        <p class="text-xs text-zinc-400 mb-4">
+                            Lumina AI uses a process called <strong>Diffusion</strong>. It starts with a field of random digital noise (static) and slowly refines it, guided by your prompt, until a clear, high-fidelity image emerges.
+                        </p>
+                        <p class="text-xs text-zinc-400">
+                            Our Flux engine calculates billions of parameters in milliseconds to ensure lighting, anatomy, and textures are photorealistic. Designed by Connectrajtiwari.
+                        </p>
                     </div>
-                </div>
-
-                <div class="p-8 bg-white/5 rounded-[3rem] border border-white/5">
-                    <h4 class="text-[10px] font-bold text-[#d0bcff] uppercase tracking-widest mb-4">About Lumina AI</h4>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Lumina.ai is a professional AI creative studio designed for the high-end generative era. We utilize Stable Diffusion architectures to deliver cinematic results instantly. Created by Connectrajtiwari.
-                    </p>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="coffeeModal" class="hidden fixed inset-0 z-[6000] flex items-center justify-center bg-black/95 backdrop-blur-xl p-6">
-        <div class="glass p-10 md:p-14 rounded-[3.5rem] max-w-sm w-full text-center border-orange-500/20">
-            <h2 class="text-2xl font-bold mb-4 text-orange-400">Support ☕</h2>
-            <div id="qrcode" class="mb-6 flex justify-center"></div>
-            <p class="text-xs font-mono text-zinc-500 mb-6 bg-white/5 p-3 rounded-2xl">9311469229@fam</p>
-            <a id="mobileLink" href="#" class="block w-full py-4 bg-orange-600 rounded-2xl font-bold text-white shadow-xl">Pay via UPI</a>
-            <button onclick="closeCoffeeModal()" class="mt-8 text-[10px] font-bold opacity-30 uppercase tracking-widest">Close</button>
+        <div class="glass p-10 md:p-14 rounded-[3rem] max-w-sm w-full text-center border-orange-500/20 shadow-2xl shadow-orange-500/10">
+            <h2 class="text-2xl font-bold mb-2 text-orange-400">Support Lumina ☕</h2>
+            <p class="text-[10px] text-zinc-500 mb-8 uppercase tracking-widest">Pay any amount to support us</p>
+            <div id="qrcode" class="mb-8 flex justify-center"></div>
+            <p class="text-[11px] font-mono text-zinc-400 mb-8 py-3 px-6 glass rounded-2xl">9311469229@fam</p>
+            <a id="mobileLink" href="#" class="block w-full py-4 bg-orange-600 rounded-2xl font-bold text-white shadow-xl hover:scale-105 transition-all">Pay via UPI</a>
+            <button onclick="closeCoffeeModal()" class="mt-8 text-[10px] font-bold opacity-30 uppercase tracking-widest">Dismiss</button>
         </div>
     </div>
 
     <script>
         const UPI_ID = "9311469229@fam";
-        const UPI_URL = `upi://pay?pa=${UPI_ID}&pn=LuminaCreator&am=49&cu=INR`;
+        // Removed &am= parameter to allow flexible payment
+        const UPI_URL = `upi://pay?pa=${UPI_ID}&pn=LuminaCreator&cu=INR&tn=LuminaSupport`;
         let userHistory = JSON.parse(localStorage.getItem('lumina_history') || '[]');
 
         async function login() { await puter.auth.signIn(); checkAuth(); }
@@ -213,18 +199,13 @@
             document.getElementById('modalUserName').innerText = name;
             document.getElementById('userAvatar').innerText = name[0].toUpperCase();
             document.getElementById('modalAvatar').innerText = name[0].toUpperCase();
-            
-            // Update Stats
             document.getElementById('statGens').innerText = userHistory.length;
             document.getElementById('statStorage').innerText = (userHistory.length * 0.4).toFixed(1) + " MB";
         }
 
         function editName() {
-            const n = prompt("Enter your name:");
-            if (n && n.trim()) {
-                localStorage.setItem('custom_name', n.trim());
-                syncUser();
-            }
+            const n = prompt("Enter profile name:");
+            if (n && n.trim()) { localStorage.setItem('custom_name', n.trim()); syncUser(); }
         }
 
         function openProfile() { document.getElementById('profileModal').classList.remove('hidden-section'); }
@@ -234,38 +215,26 @@
             document.getElementById('homeView').classList.toggle('hidden-section', v !== 'home');
             document.getElementById('historyView').classList.toggle('hidden-section', v !== 'history');
             document.getElementById('viewTitle').innerText = v === 'home' ? 'Studio Workspace' : 'Personal Library';
-            
-            // Update Mobile Colors
             document.getElementById('navHome').className = (v === 'home') ? "flex flex-col items-center text-[#d0bcff]" : "flex flex-col items-center text-zinc-500";
             document.getElementById('navLib').className = (v === 'history') ? "flex flex-col items-center text-[#d0bcff]" : "flex flex-col items-center text-zinc-500";
-            
             if (v === 'history') renderHistory();
         }
 
         async function generate() {
             const p = document.getElementById('userPrompt').value;
             if (!p) return;
-
             const card = document.createElement('div');
-            card.className = "masonry-item glass rounded-[2.5rem] p-10 flex flex-col items-center justify-center h-80 border-[#d0bcff]/30";
+            card.className = "masonry-item glass rounded-[2.5rem] p-10 flex flex-col items-center justify-center h-80 border-[#d0bcff]/30 shadow-2xl";
             card.innerHTML = `<div class="animate-spin w-8 h-8 border-2 border-[#d0bcff] border-t-transparent rounded-full"></div>`;
             document.getElementById('homeView').prepend(card);
-
             try {
                 const img = await puter.ai.txt2img(p, { model: 'flux-schnell' });
-                card.innerHTML = `<div class="relative group w-full h-full">
-                    <img src="${img.src}" class="w-full h-full object-cover rounded-3xl">
-                    <button onclick="downloadImage('${img.src}')" class="absolute bottom-4 right-4 glass p-3 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all">
-                        <span class="material-symbols-outlined text-sm">download</span>
-                    </button>
-                </div>`;
+                card.innerHTML = `<div class="relative group w-full h-full"><img src="${img.src}" class="w-full h-full object-cover rounded-3xl"><button onclick="downloadImage('${img.src}')" class="absolute bottom-4 right-4 glass p-3 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-all"><span class="material-symbols-outlined text-sm">download</span></button></div>`;
                 card.classList.add('p-0');
                 userHistory.unshift({ src: img.src, prompt: p });
                 localStorage.setItem('lumina_history', JSON.stringify(userHistory));
                 syncUser();
-            } catch (err) {
-                card.innerHTML = `<p class="text-xs text-red-400 font-bold">Network busy. Try again.</p>`;
-            }
+            } catch (err) { card.innerHTML = `<p class="text-xs text-red-400 font-bold">Retry in a moment.</p>`; }
             document.getElementById('userPrompt').value = '';
         }
 
@@ -299,9 +268,7 @@
         function renderHistory() {
             const h = document.getElementById('historyView');
             h.innerHTML = userHistory.length ? '' : '<p class="col-span-full text-center py-20 text-[10px] tracking-widest opacity-20 font-bold">Archive Empty</p>';
-            userHistory.forEach(i => {
-                h.innerHTML += `<div class="masonry-item rounded-[2rem] overflow-hidden border border-white/5"><img src="${i.src}" class="w-full h-auto"></div>`;
-            });
+            userHistory.forEach(i => { h.innerHTML += `<div class="masonry-item rounded-[2rem] overflow-hidden border border-white/5 shadow-xl"><img src="${i.src}" class="w-full h-auto"></div>`; });
         }
 
         function openCoffeeModal() {
